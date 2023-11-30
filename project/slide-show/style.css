@@ -1,0 +1,52 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #364b63;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.center{
+
+}
+
+.slider{
+    background: url(images/sagiri.jpg);
+    background-size: cover;
+    height: 450px;
+    width: 800px;
+    background-position: center;
+    box-shadow: 0px 5px 8px rgba(0,0,0,0.3);
+    animation: animate 10s infinite;
+}
+
+@keyframes animate{
+    20%{
+        background: url(images/art.jpg);
+        background-position: center;
+        background-size: cover;
+        
+    }
+    40%{
+        background: url(images/rain.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    60%{
+        background: url(images/wonderland.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    80%{
+        background: url(images/wallpaperflare.com_wallpaper.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+    100%{
+        background: url(images/sagiri.jpg);
+        background-position: center;
+        background-size: cover;
+    }
+}

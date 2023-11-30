@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: azure;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Block */
+.btn{
+    display: inline-block;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    padding: 12px 48px;
+    border-radius: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: all 0.2s linear;
+    min-width: 120px;
+}
+
+.btn--success{
+    background-color: rgb(33, 211, 13);
+}
+
+.btn--danger{
+    background-color: rgb(223, 16, 16);
+}
+
+.btn:hover{
+    opacity: 0.5;
+}

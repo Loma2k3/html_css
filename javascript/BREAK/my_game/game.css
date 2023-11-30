@@ -1,0 +1,32 @@
+.grid{
+    width: 560px;
+    height: 300px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.block{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: blue;
+}
+
+.user{
+    position: absolute;
+    width: 100px;
+    height: 20px;
+    background-color: purple;
+}
+
+#score{
+    font-size: 50px;
+}
+
+.ball{
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: red;
+    position: absolute;
+}

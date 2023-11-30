@@ -1,0 +1,25 @@
+.main{
+    display: flex;
+}
+
+.sidebar{
+    width: 300px;
+}
+
+.content{
+    background-color: gray;
+    flex: 1;
+}
+
+.item{
+    background-color: orange;
+    text-align: center;
+    line-height: 100px;
+    margin-top: 16px;
+}
+
+@media only screen and (max-width: 740px){
+    .sidebar{
+        display: none;
+    }
+}

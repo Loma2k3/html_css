@@ -1,0 +1,93 @@
+body{
+    margin: 0;
+}
+
+.nav{
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.69);
+    color: white;
+    font-size: 25px;
+    height: 50px;
+    align-items: center;
+}
+
+.nav__pc{
+
+}
+
+.nav__list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+}
+
+.nav__link{
+    text-decoration: none;
+    color: white;
+    padding: 0 10px;
+}
+
+.nav__bars-btn{
+    display: none;
+}
+
+.nav__overlay{
+    position:fixed ;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.352);
+    display: none;
+}
+
+.nav__mobile{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    transform: translateX(100%);
+}
+
+.nav__mobile-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    padding:20px;
+}
+
+.nav__mobile-link{
+    text-decoration: none;
+    color: black;
+}
+
+.nav__mobile-close{
+    text-align: center;
+    color: black;
+}
+
+.nav__input{
+    display: none;
+}
+
+.nav__input:checked ~ .nav__overlay{
+    display: block;
+    animation: fadeout linear 0.3s;
+}
+
+.nav__input:checked ~ .nav__mobile{
+    transform: translateX(0);
+    transition: all linear 0.3s;
+}
+
+@keyframes fadeout{
+    from{
+        opacity: 0;
+    }to{
+        opacity:1;
+    }
+}

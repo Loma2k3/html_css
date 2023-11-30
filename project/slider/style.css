@@ -1,0 +1,121 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: #364b63;
+}
+
+.wrapper{
+    height: 400px;
+    width: 700px;
+    position: relative;
+    box-shadow: 0px 5px 8px rgba(0,0,0,0.3);
+}
+
+.wrapper .img{
+    position: absolute;
+}
+
+.wrapper .img img{
+    width: 700px;
+    height: 400px;
+    clip-path: circle(0% at 0% 100%);
+    will-change: clip-path;
+    transition: all linear 1s;
+}
+
+#one:checked ~.sliders .one{
+    width: 35px;
+    border-radius: 14px;
+    background: gainsboro;
+}
+
+#two:checked ~.sliders .two{
+    width: 35px;
+    border-radius: 14px;
+    background: gainsboro;
+}
+#three:checked ~.sliders .three{
+    width: 35px;
+    border-radius: 14px;
+    background: gainsboro;
+}
+#four:checked ~.sliders .four{
+    width: 35px;
+    border-radius: 14px;
+    background: gainsboro;
+}
+#five:checked ~.sliders .five{
+    width: 35px;
+    border-radius: 14px;
+    background: gainsboro;
+}
+
+
+#one:checked ~ .img-1 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#two:checked ~ .img-2 img,
+#two:checked ~ .img-1 img
+{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#three:checked ~ .img-3 img,
+#three:checked ~ .img-2 img,
+#three:checked ~ .img-1 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#four:checked ~ .img-4 img,
+#four:checked ~ .img-3 img,
+#four:checked ~ .img-2 img,
+#four:checked ~ .img-1 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+#five:checked ~ .img-5 img,
+#five:checked ~ .img-4 img,
+#five:checked ~ .img-3 img,
+#five:checked ~ .img-2 img,
+#five:checked ~ .img-1 img{
+    clip-path: circle(150% at 0% 100%);
+}
+
+
+.wrapper .sliders{
+    position: absolute;
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 999;
+    display: flex;
+}
+
+.wrapper .sliders label{
+    height: 13px;
+    width: 13px;
+    border: 3px solid gainsboro;
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 0 3px;
+    transition: all linear 0.2s;
+    will-change: width;
+}
+
+.sliders label:hover{
+    background: gainsboro;
+}
+
+input{
+    display: none;
+}
+

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>message</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="main copy.css">
+</head>
+
+<body>
+    <div id="toast">
+        <!-- Success -->
+        <!-- <div class="toast toast--success">
+            <div class="toast__icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="toast__body">
+                <h3 class="toast__title">Success</h3>
+                <p class="toast__msg">Anyone with access can view your invited visitors</p>
+            </div>
+            <div class="toast__close">
+                <i class="fa-solid fa-xmark"></i>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- Button -->
+    <div>
+        <div class="btn btn--success" onclick="showSuccessToast()">show success toast</div>
+        <div class="btn btn--danger" onclick="showErrorToast()">show danger toast</div>
+    </div>
+
+    <!-- script -->
+    <script>
+        function toast({ title = '', message = '', type = 'info', duration = 3000 }) {
+            const main = document.getElementById('toast');
+            if (main) {
+                const toast = document.createElement('div');
+                toast.classList.add('toast', `toast--${type}`);
+                const delay = (duration / 1000).toFixed(2);
+                toast.style.animation = `slideInLeft ease 0.3s, fadeOut linear 1s ${delay}s forwards`;
+                const icons = {
+                    success: 'fa-solid fa-circle-check',
+                    info: 'fa-solid fa-info',
+                    warning: 'fa-solid fa-triangle-exclamation',
+                    error: 'fa-solid fa-bomb'
+                }
+                const icon = icons[type];
+
+                toast.innerHTML = `
+                <div class="toast__icon">
+                    <i class="${icon}"></i>
+                </div>
+                <div class="toast__body">
+                    <h3 class="toast__title">${title}</h3>
+                    <p class="toast__msg">${message}</p>
+                </div>
+                <div class="toast__close">
+                    <i class="fa-solid fa-xmark"></i>
+                </div>
+                   
+                   `
+                main.appendChild(toast);
+
+                const autoDel=setTimeout(function () {
+                    main.removeChild(toast);
+                }, duration + 1000);
+
+                toast.onclick = function (e) {
+                    if (e.target.closest('.toast__close')) {
+                        main.removeChild(toast);
+                        clearTimeout(autoDel);
+                    }
+                }
+
+            }
+        }
+
+        function showSuccessToast() {
+            toast({
+                title: 'Success',
+                message: 'the computer has connected',
+                type: 'success',
+                duration: 1000
+            })
+        }
+
+        function showErrorToast() {
+            toast({
+                title: 'error',
+                message: 'something has wrong',
+                type: 'error',
+                duration: 1000
+            })
+        }
+    </script>
+
+</body>
+
+</html>
